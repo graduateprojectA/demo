@@ -26,8 +26,55 @@
             <a name = "timetable1"></a>
             시간표선택
             <div>
-                <label><input type="checkbox" value="blue" style = "margin-left:0px; margin-right:0px; margin-top:0px; margin-bottom:0px;"></label>
-                <label><input type="checkbox" value="red"></label>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px; margin-bottom:-47px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
+                <div style = "border: solid 1px;">
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                    <label><input type="checkbox" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
+                </div>
             </div>        
 
             <a href = "#timetable2">

@@ -55,7 +55,7 @@ input::placeholder {
     
 .modal-content {
   background-color: #f0f0f0;
-  margin: 20% auto; /* 15% from the top and centered */
+  margin: 10% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */     
@@ -92,7 +92,7 @@ input::placeholder {
               <span class="close">&times;</span>                                                               
               <p>전공을 검색하세요</p>
               <input id = "majors" placeholder = "컴퓨터공학전공">
-              <button>선택</button>
+              <button class="choice">선택</button>
             </div>
           </div>
 
@@ -151,10 +151,11 @@ $(function() {
 
 var modal = document.getElementById('myModal');
  // Get the button that opens the modal
- var btn = document.getElementById("myBtn");
+var btn = document.getElementById("myBtn");
  // Get the <span> element that closes the modal
- var span = document.getElementsByClassName("close")[0];                                          
+var span = document.getElementsByClassName("close")[0];                                          
  // When the user clicks on the button, open the modal 
+var span = document.getElementsByClassName("choice")[0]; 
  btn.onclick = function() {
      modal.style.display = "block";
  }
