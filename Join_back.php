@@ -10,7 +10,7 @@
     $password = $_POST['password'];
     $username = $_POST['username'];
     if(isset($email) && isset($password) && isset($username)){
-        $query="select email from member where user_email='$email'";
+        $query="insert into graduate.user (user_id, user_pw, user_major, user_credit, user_grade, time_out) values ('1871021','tlsl4949','컴퓨터공학','','','');";
         $result=mysqli_query($mysqli, $query);
         $re = mysqli_fetch_array($result);
         if(!empty($re)){

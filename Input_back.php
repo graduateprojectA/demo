@@ -10,10 +10,19 @@ mysqli_query($conn, "set session character_set_client=utf8;");
 if(mysqli_connect_errno()){ echo "연결실패! ".mysqli_connect_error();}
 
 // String[] time_out = request.getParameterValues("time_out");
-$timeout = $_POST['time_out'];
-for($i=0; $i<count($timeout); $i++){
-    echo $timeout[$i];
+$user_credit = $_POST['user_credit'];
+$user_grade = $_POST['user_grade'];
+$time_out = $_POST['time_out'];
+for($i=0; $i<count($time_out); $i++){
+    echo $time_out[$i];
 }    
+
+$credit_query = "UPDATE user SET user_credit = $user_credit WHERE user_id = $user_id"
+mysqli_query($conn, $credit_query;
+$grade_query = "UPDATE user SET user_grade = $user_grade WHERE user_id = $user_id"
+mysqli_query($conn, $grade_query);
+$timeout_query = "UPDATE user SET time_out = $time_out WHERE user_id = $user_id"
+mysqli_query($conn, $timeout_query);
 
 mysqli_close($conn);
 ?>

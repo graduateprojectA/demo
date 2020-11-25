@@ -7,19 +7,16 @@
         die('Connect Error ('.mysqli_connect_errno().')'.mysqli_connect_error());
     }
     $user_id = $_POST['user_id'];
-    $password = $_POST['password'];
-    // $query="select * from member where user_email='$email' and user_pw = md5('$password')";
-    $query="SELECT * FROM user_info WHERE user_id='$user_id' and password = '$password'";
+    $user_pw = $_POST['user_pw'];
+    $query="SELECT * FROM user WHERE user_id='$user_id' and user_pw = '$user_pw'";
     $result=mysqli_query($mysqli,$query);
     $row=mysqli_fetch_array($result);
     if(!empty($row['user_id'])){
         $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['password'] = $row['password'];
-        $_SESSION['grade'] = $row['grade'];
-        $_SESSION['semester'] = $row['semester'];
-        $_SESSION['major'] = $row['major'];
+        $_SESSION['user_pw'] = $row['user_pw'];
+        $_SESSION['user_major'] = $row['user_major'];
         echo("<script>location.href='./Input.php';</script>");
     }else{
-        echo"<script>alert('Please check your id and password.');history.back();</script>";
+        // echo"<script>alert('Please check your id and password.');history.back();</script>";
     }
 ?>
