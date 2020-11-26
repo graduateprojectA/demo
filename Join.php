@@ -1,3 +1,10 @@
+<?php session_start();
+$id = $_SESSION['user_id'];
+$name = $_SESSION['user_name'];
+$email = $_SESSION['user_email']; 
+$password = $_SESSION['user_pw'];
+$conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -104,18 +111,15 @@ input::placeholder {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
-
-// 자동검색
 $(function() {
   var allMajors = [];
   <?php 
-    $major_ = "SELECT major_name FROM major_name";
+    $major_ = "SELECT major_name FROM department";
     $major = mysqli_query($conn, $major_);
     while($result = mysqli_fetch_assoc($major)){?>
       allMajors.push('<?php echo $result['major_name'] ?>');
   <?php }  ?>
 
-  allMajors.push('컴퓨터공학전공');
   $("#majors").autocomplete({
     source: allMajors,
     select: function(event, ui) {
@@ -127,6 +131,8 @@ $(function() {
     } 
   });
 });
+// 자동검색
+
 
 (function cleanText($) {
   var $pw = $('#ex4-id-input, #ex4-pw-input,ex4-major-input')
@@ -141,7 +147,8 @@ $(function() {
   });
 })(jQuery);
 
-var modal = document.getElementById('myModal');
+ // Get the modal
+ var modal = document.getElementById('myModal');
  // Get the button that opens the modal
  var btn = document.getElementById("myBtn");
  // Get the <span> element that closes the modal
@@ -166,5 +173,3 @@ var modal = document.getElementById('myModal');
 </script>
 
 </html> 
-
-

@@ -1,194 +1,169 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+.default_box{
+  text-align:center;
+  width:100%;
+  height:100%;
+  margin-top:18%;
+  font-family: 'Do Hyeon', sans-serif;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
+.default_btn{
+  background:#99aa8c; 
+  color:white;
+  width:20vw;
+  height:5vh;
+  border:0;
   font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
 }
+ .txt_box{             /* input : id,pw 입력자리 */
+  color:#99aa8c;
+  width:20vw;
+  height:5vh;
+  margin: 0.5%;
+  border:0;
+  background-color:white;
+  text-align:left;
+  padding-left:0px;
+}
+input::placeholder {
+  color: #99aa8c;
+}
+  /* The Modal (background) */
+  .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+    
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */                          
+        }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.aa{
-    height:100px;
-    width: 100px;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
 </style>
 </head>
 <body>
 
-<form method="POST" action="Input_back.php">
-<div class="slideshow-container">
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="images/background_1.jpg" style="width:100%;">
-  <div class="text">
-  
-  학년을 입력해주세요
-            <br/>
-            <input value = "학년"/>
-            <br/>
-            이번 학기에 들을 학점을 입력해주세요
-            <br/>
-            <input value = "학점수"/>
-  </div>
-</div>
+<div class="default_box">
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="images/background1.png" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
+<!-- Trigger/Open The Modal -->
+<input type="text" class="txt_box" id="ex4-id-input" name="id" placeholder="학번 7자리"/>
+          <br/>
+          <input type="password" class="txt_box" id="ex4-pw-input" name="password" placeholder="비밀번호"/>
+          <br/>
+          <button id="myBtn" class = "txt_box">전공 선택</button>
+ 
+ <!-- The Modal -->
+ <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>                                                               
+              <p>전공을 검색하세요</p>
+              <input id = "majors" placeholder = "컴퓨터공학전공">
+              <button>선택</button>
+            </div>
+          </div>
+          <br/>
+          <input type="submit" value="회원가입" class="default_btn">
+          <br><br>
+          <a href = "Login.php" style = "font-size: 18px; color: #777777; 
+          text-decoration: none;">이미 계정이 있으신가요? <br>
+          지금 <p style="display:inline; color:#99aa8c; font-weight:bold;">로그인</p>하세요!</a>  
+          </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="images/background2.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
 
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-</div>
-<br>
+// Get the modal
+var modal = document.getElementById('myModal');
+ 
+ // Get the button that opens the modal
+ var btn = document.getElementById("myBtn");
 
-<div style="text-align:center">
-  <button type = "button" onclick="currentSlide(1)" class="aa">aa</button>
-  <button type = "button" onclick="currentSlide(2)" class="aa">aa</button>
-  <button type = "button" onclick="currentSlide(3)" class="aa">aa</button>
-</div>
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];                                          
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
+ // When the user clicks on the button, open the modal 
+ btn.onclick = function() {
+     modal.style.display = "block";
+ }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() {
+     modal.style.display = "none";
+ }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function(event) {
+     if (event.target == modal) {
+         modal.style.display = "none";
+     }
+ }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-   if (n > slides.length) {dot[n].style.display = "block";}    
-   if (n < 1) {dot[n-1].style.display = "block";}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  
 
-  var aas = document.getElementsByClassName("aa");
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < aas.length; i++) {
-      aas[i].className = aas[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  aas[slideIndex-1].className += " active";
-}
+ $(function() {
+  var allMajors = [];
+  <?php 
+    $major_ = "SELECT major_name FROM majors";
+    $major = mysqli_query($conn, $major_);
+    while($result = mysqli_fetch_assoc($major)){?>
+      allMajors.push('<?php echo $result['major_name'] ?>');
+  <?php }  ?>
+
+  $("#majors").autocomplete({
+    source: allMajors,
+    select: function(event, ui) {
+        console.log(ui.item);
+    },
+    focus: function(event, ui) {
+        return false;
+        //event.preventDefault();
+    } 
+  });
+});
+
+
+
+
 </script>
 
 </body>
