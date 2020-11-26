@@ -1,10 +1,3 @@
-<?php session_start();
-$id = $_SESSION['user_id'];
-$name = $_SESSION['user_name'];
-$email = $_SESSION['user_email']; 
-$password = $_SESSION['user_pw'];
-$conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
-?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -15,7 +8,7 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   text-align:center;
   width:100%;
   height:100%;
-  margin-top:18%;
+  margin-top:16%;
   font-family: 'Do Hyeon', sans-serif;
 }
 .default_btn{
@@ -76,15 +69,16 @@ input::placeholder {
 }
 
 </style>
+</head>
 
 <body>
   <div class="default_box">
-        <!-- <form method="POST" action="Join_back.php"> -->
+        <form method="POST" action="Join_back.php">
           <input type="text" class="txt_box" id="ex4-id-input" name="id" placeholder="학번 7자리"/>
           <br/>
           <input type="password" class="txt_box" id="ex4-pw-input" name="password" placeholder="비밀번호"/>
           <br/>
-          <button id="myBtn" class = "txt_box">전공 선택</button>
+          <!-- <button id="myBtn" class = "txt_box">전공 선택</button>
 
           <div id="myModal" class="modal">
             <div class="modal-content">
@@ -93,7 +87,8 @@ input::placeholder {
               <input id = "majors" placeholder = "컴퓨터공학전공">
               <button>선택</button>
             </div>
-          </div>
+          </div> -->
+          <input type="text" class="txt_box" name="major" placeholder="전공 이름 ex)컴퓨터공학"/>
 
           <br/>
           <input type="submit" value="회원가입" class="default_btn">
@@ -101,11 +96,9 @@ input::placeholder {
           <a href = "Login.php" style = "font-size: 18px; color: #777777; 
           text-decoration: none;">이미 계정이 있으신가요? <br>
           지금 <p style="display:inline; color:#99aa8c; font-weight:bold;">로그인</p>하세요!</a>  
-      <!-- </form> -->
+      </form>
 
 </div>
-</body>
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -168,8 +161,6 @@ $(function() {
      }
  }
 
-
-
 </script>
-
+</body>
 </html> 
