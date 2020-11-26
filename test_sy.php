@@ -1,83 +1,211 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
+// session_start();
+// $id = $_SESSION['user_id'];
+// $query = "SELECT credit from user where user = '$id';";
+// mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
+<html>
 <head>
+<meta charset="utf-8">
 <style>
- .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-    
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */                          
-        }
-        /* The Close Button */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+.default{
+  text-align:center;
+  width:100%;
+  height:100%;
+  font-size: 20px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.day{
+  width:250px;
+}
+.time{
+  width: 70px;
+}
+.first{
+  margin-top:2%;
+  width:250px;
+}
+.second{
+  width:250px;
+}
 </style>
 </head>
-<body>
-<!-- <form method="POST" action="test_sy.php"> -->
-    <button id="myBtn">Open Modal</button>
- <!-- </form> -->
 
- <!-- The Modal -->
- <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>                                                               
-        <p>Some text in the Modal..</p>
-        <input type="text" name="test"/>
-        <input type="submit" value="제출"/>
-      </div>
-    </div>
-    <script>
-var modal = document.getElementById('myModal');
- 
- // Get the button that opens the modal
- var btn = document.getElementById("myBtn");
+<body class="default">
+<table>
+<!-- 몇 학점 추천 시간표 -->
+<p>추천 시간표</p>
+<?php 
+$query = "SELECT max(table_number) FROM time_table;";
+$result = mysqli_query($conn, $query);
+$table_num_ = mysqli_fetch_row($result);
+$table_num = $table_num_[0];
+echo $table_num;
+?>
 
- // Get the <span> element that closes the modal
- var span = document.getElementsByClassName("close")[0];                                          
+<nav><ul><?php 
+for($i = 1; $i <= $table_num; $i++){
+  echo "<button>",$i,"</button>";
+}
+?></ul></nav> 
+<p>안녕 &#9;안녕 &nbsp; 안녕 &emsp; 안녕</p>
 
- // When the user clicks on the button, open the modal 
- btn.onclick = function() {
-     modal.style.display = "block";
- }
+<thead><tr>
+<th>시간</th>
+<th class="day">월</th>
+<th class="day">화</th>
+<th class="day">수</th>
+<th class="day">목</th>
+<th class="day">금</th>
+</tr></thead>
 
- // When the user clicks on <span> (x), close the modal
- span.onclick = function() {
-     modal.style.display = "none";
- }
+<tbody>
+<tr>
+<td class="time">1교시</td>
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=1;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="first">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="first">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="first">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="first">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="first">',$course,'</td>';
+}
+?>
+</tr>
+<tr><td class="time">2교시</td>
 
- // When the user clicks anywhere outside of the modal, close it
- window.onclick = function(event) {
-     if (event.target == modal) {
-         modal.style.display = "none";
-     }
- }
-</script>
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=2;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+
+</tr>
+<tr><td class="time">3교시</td>
+
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=3;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+
+</tr>
+<tr><td class="time">4교시</td>
+
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=4;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+
+</tr>
+<tr><td class="time">5교시</td>
+
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=5;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+
+</tr>
+<tr><td class="time">6교시</td>
+
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=6;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+
+</tr>
+<tr><td class="time">7교시</td>
+
+<?php 
+$query = "SELECT * FROM time_table where table_number = 1 and period=7;";
+$result = mysqli_query($conn, $query);
+while ($table_1 = mysqli_fetch_assoc($result)){
+  $day = $table_1['week'];
+  $course = $table_1['course_name'];
+    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
+    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+}
+?>
+</tr>
+</tbody>
+<!-- <tbody>
+<tr>
+<td>1교시</td>
+<td class="first"></td>
+<td class="first"></td>
+<td class="first"></td>
+<td class="first"></td>
+<td class="first"></td>
+</tr>
+
+<tr>
+<td>2교시</td>
+<td class="second"></td>
+<td class="second"></td>
+<td class="second"></td>
+<td class="second"></td>
+<td class="second"></td>
+</tr> -->
+
+</tbody>
+</table>
+</body>
+</html>
+
+
 
 
 
