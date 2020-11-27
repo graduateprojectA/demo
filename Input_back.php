@@ -25,7 +25,6 @@ $grade_query = "UPDATE user SET user_grade = $user_grade WHERE user_id = $user_i
 mysqli_query($conn, $grade_query);
 $timeout_query = "UPDATE user SET time_out = $time_out WHERE user_id = $user_id;";
 mysqli_query($conn, $timeout_query);
-echo (int)$time_out;
 ?>
 <script>
     alert("입력완료");

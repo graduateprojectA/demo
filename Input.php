@@ -24,7 +24,8 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  width: 100%;
+  height:100%;
   position: relative;
   margin: auto;
 }
@@ -58,23 +59,23 @@ img {vertical-align: middle;}
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: #333333;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 50%;
   width: 100%;
   text-align: center;
 }
 
 /* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
+/* .numbertext {
+  color: #111111;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
-}
+} */
 
 /* The dots/bullets/indicators */
 .dot {
@@ -100,9 +101,9 @@ img {vertical-align: middle;}
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2.0s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2.0s;
 }
 
 @-webkit-keyframes fade {
@@ -126,8 +127,8 @@ img {vertical-align: middle;}
 <form method="POST" action="Input_back.php">
 <div class="slideshow-container">
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="images/background_1.jpg" style="width:100%;">
+  <!-- <div class="numbertext">1 / 3</div> -->
+  <img src="images/bg1.png" width="100%" height="100%">
   <div class="text">
         학년을 입력해주세요
         <br/>
@@ -140,8 +141,8 @@ img {vertical-align: middle;}
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="images/background1.png" style="width:100%">
+  <!-- <div class="numbertext">2 / 3</div> -->
+  <img src="images/bg2.png" style="width:100%">
   <div class="text">
     시간표선택
     <div>
@@ -199,8 +200,8 @@ img {vertical-align: middle;}
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="images/background2.jpg" style="width:100%">
+  <!-- <div class="numbertext">3 / 3</div> -->
+  <img src="images/bg3.png" style="width:100%">
   <div class="text">
     과목선택
     <?php 
@@ -210,20 +211,22 @@ img {vertical-align: middle;}
             echo $eachmajor['major_name'];
         }
     ?>
+    <button>제출</button>
   </div>
 </div>
+</form>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 </div>
 <br>
-
+<!-- 
 <div style="text-align:center">
   <button type = "button" onclick="currentSlide(1)" class="aa">aa</button>
   <button type = "button" onclick="currentSlide(2)" class="aa">aa</button>
   <button type = "button" onclick="currentSlide(3)" class="aa">aa</button>
-</div>
+</div> -->
 
 <script>
 var slideIndex = 1;
