@@ -19,166 +19,190 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   font-family: 'Do Hyeon', sans-serif;
 }
 .day{
-  width:250px;
+  width:200px;
 }
 .time{
   width: 70px;
 }
-.first{
-  margin-top:2%;
-  width:250px;
+.day_box{
+  /* width:250px; */
+  text-align:center;
+  /* border: 1px solid; */
 }
-.second{
-  width:250px;
+.mon{
+  position: absolute;
+  left: 7%;
+  border: 1px solid;
+}
+.tue{
+  position: absolute;
+  left: 19%;
+  border: 1px solid;
+}
+.wed{
+  position: absolute;
+  left: 34%;
+  border: 1px solid;
+}
+.thur{
+  position: absolute;
+  left: 50%;
+  border: 1px solid;
+}
+.fri{
+  position: absolute;
+  left: 59%;
+  border: 1px solid;
 }
 </style>
 </head>
 
 <body class="default">
-<table>
-<!-- 몇 학점 추천 시간표 -->
-<p>추천 시간표</p>
 <?php 
 $query = "SELECT max(table_number) FROM time_table;";
 $result = mysqli_query($conn, $query);
 $table_num_ = mysqli_fetch_row($result);
 $table_num = $table_num_[0];
-echo $table_num;
 ?>
 
-<nav><ul><?php 
-for($i = 1; $i <= $table_num; $i++){
-  echo "<button>",$i,"</button>";
-}
-?></ul></nav> 
+<p>총 <?php echo $table_num?>개의 추천 시간표가 있습니다.</p>
 <p>안녕 &#9;안녕 &nbsp; 안녕 &emsp; 안녕</p>
 
+
+<?php
+for ($i=1; $i<=$table_num; $i++){
+  $table_index = $i;
+?>
+<table style="border:1px solid;" id="timetable">
+<!-- 몇 학점 추천 시간표 -->
 <thead><tr>
-<th>시간</th>
-<th class="day">월</th>
-<th class="day">화</th>
-<th class="day">수</th>
-<th class="day">목</th>
-<th class="day">금</th>
+<th style="border:1px solid;">시간</th>
+<th class="day" style="border:1px solid;">월</th>
+<th class="day" style="border:1px solid;">화</th>
+<th class="day" style="border:1px solid;">수</th>
+<th class="day" style="border:1px solid;">목</th>
+<th class="day" style="border:1px solid;">금</th>
 </tr></thead>
 <tr>
-<td class="time">1교시</td>
+<td class="time" style="border:1px solid;">1교시</td>
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=1;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=1;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="first">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="first">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="first">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="first">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="first">',$course,'</td>';
+    if (!strcmp($day,"월"))     echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+    if (!strcmp($day,"화"))     echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+    if (!strcmp($day,"수"))     echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+    if (!strcmp($day,"목"))     echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+    if (!strcmp($day,"금"))     echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 </tr>
-<tr><td class="time">2교시</td>
+<tr><td class="time" style="border:1px solid;">2교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=2;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=2;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 
 </tr>
-<tr><td class="time">3교시</td>
+<tr><td class="time" style="border:1px solid;">3교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=3;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=3;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 
 </tr>
-<tr><td class="time">4교시</td>
+<tr><td class="time" style="border:1px solid;">4교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=4;";
+$query = "SELECT * FROM time_table where table_number = $table_index  and period=4;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 
 </tr>
-<tr><td class="time">5교시</td>
+<tr><td class="time" style="border:1px solid;">5교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=5;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=5;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 
 </tr>
-<tr><td class="time">6교시</td>
+<tr><td class="time" style="border:1px solid;">6교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=6;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=6;";
 $result = mysqli_query($conn, $query);  
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-  if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-  if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-  if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-  if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-  if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 
 </tr>
-<tr><td class="time">7교시</td>
+<tr><td class="time" style="border:1px solid;">7교시</td>
 
 <?php 
-$query = "SELECT * FROM time_table where table_number = 1 and period=7;";
+$query = "SELECT * FROM time_table where table_number = $table_index and period=7;";
 $result = mysqli_query($conn, $query);
 while ($table_1 = mysqli_fetch_assoc($result)){
   $day = $table_1['week'];
   $course = $table_1['course_name'];
-    if (!strcmp($day,"월"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"화"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"수"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"목"))      echo '<td class="second">',$course,'</td>';
-    if (!strcmp($day,"금"))      echo '<td class="second">',$course,'</td>';
+  if (!strcmp($day,"월"))      echo '<div class="day_box"><td class="mon">',$course,'</td></div>';
+  if (!strcmp($day,"화"))      echo '<div class="day_box"><td class="tue">',$course,'</td></div>';
+  if (!strcmp($day,"수"))      echo '<div class="day_box"><td class="wed">',$course,'</td></div>';
+  if (!strcmp($day,"목"))      echo '<div class="day_box"><td class="thur">',$course,'</td></div>';
+  if (!strcmp($day,"금"))      echo '<div class="day_box"><td class="fri">',$course,'</td></div>';
 }
 ?>
 </tr>
-</tbody>
 </table>
+<?php }?>
+
+
 </body>
 </html>
