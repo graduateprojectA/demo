@@ -25,12 +25,30 @@ $grade_query = "UPDATE user SET user_grade = $user_grade WHERE user_id = $user_i
 mysqli_query($conn, $grade_query);
 $timeout_query = "UPDATE user SET time_out = $time_out WHERE user_id = $user_id;";
 mysqli_query($conn, $timeout_query);
-echo (int)$time_out;
+
+// $user_major_ = "SELECT * from majors where recommend_time = (int)($user_grade.'2');";
+$now_grade = (int)($user_grade.'2');
+$user_major_ = "SELECT * from majors where recommend_time = $now_grade;";
+$user_major = mysqli_query($conn, $user_major_);
+while($major = mysqli_fetch_row($user_major)){
+    $userinsert = "INSERT into graduate.user1_dropmajor (major_name, major_number, division_number, flag) values ('$major[0]', '$major[1]', '$major[6]', '1');";
+    mysqli_query($conn, $userinsert);
+}
+
+foreach($_POST['major_check'] as $check){
+    $num = substr($check, 0, 5);
+    $divi = substr($check, 5, 1);
+    $drop_update = "UPDATE user1_dropmajor set flag = 0 where major_number = $num and division_number = $divi;";
+    mysqli_query($conn, $drop_update);
+}
 ?>
+
 <script>
     alert("입력완료");
     location.href='Timetable.php'; 
 </script>
+
+
 <?php
 mysqli_close($conn);
 ?>

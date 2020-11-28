@@ -17,6 +17,6 @@
         $_SESSION['user_major'] = $row['user_major'];
         echo("<script>location.href='./Input.php';</script>");
     }else{
-        // echo"<script>alert('Please check your id and password.');history.back();</script>";
+        echo"<script>alert('Please check your id and password.');history.back();</script>";
     }
 ?>
