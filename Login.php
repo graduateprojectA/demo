@@ -8,7 +8,7 @@
   text-align:center;
   width:100%;
   height:100%;
-  margin-top:18%;
+  margin-top:16%;
   font-family: 'Do Hyeon', sans-serif;
 }
 .default_btn{
@@ -35,7 +35,7 @@ input::placeholder {
 <body>
   <div class="default_box">
     <form method="POST" action="Login_back.php">
-        <input type="text" id="ex4-id-input" class="txt_box" name="user_id" placeholder="학번"/>
+        <input type="text" id="ex4-id-input" class="txt_box" name="user_id" placeholder="아이디"/>
         <br/>
         <input type="password" id="ex4-pw-input" class="txt_box" name="user_pw" placeholder="비밀번호"/>
         <br/>

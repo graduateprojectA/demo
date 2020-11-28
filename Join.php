@@ -1,10 +1,3 @@
-<?php session_start();
-$id = $_SESSION['user_id'];
-$name = $_SESSION['user_name'];
-$email = $_SESSION['user_email']; 
-$password = $_SESSION['user_pw'];
-$conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
-?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -15,7 +8,7 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   text-align:center;
   width:100%;
   height:100%;
-  margin-top:18%;
+  margin-top:16%;
   font-family: 'Do Hyeon', sans-serif;
 }
 .default_btn{
@@ -40,6 +33,7 @@ input::placeholder {
   color: #99aa8c;
 }
 </style>
+</head>
 
 <body>
   <div class="default_box">
@@ -49,6 +43,16 @@ input::placeholder {
           <input type="password" class="txt_box" id="ex4-pw-input" name="user_pw" placeholder="비밀번호"/>
           <br/>
           <input type="text" class="txt_box" id="mybtn" name="user_major" placeholder="전공"/>
+          <!-- <button id="myBtn" class = "txt_box">전공 선택</button>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>                                                               
+              <p>전공을 검색하세요</p>
+              <input id = "majors" placeholder = "컴퓨터공학전공">
+              <button>선택</button>
+            </div>
+          </div> -->
           <br/>
           <input type="submit" value="회원가입" class="default_btn">
           <br><br>
@@ -58,8 +62,6 @@ input::placeholder {
       </form>
 
 </div>
-</body>
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -104,5 +106,5 @@ $("#mybtn").autocomplete({
 
 
 </script>
-
+</body>
 </html> 
