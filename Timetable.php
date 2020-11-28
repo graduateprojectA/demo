@@ -19,40 +19,54 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   font-family: 'Do Hyeon', sans-serif;
 }
 .day{
-  width:200px;
+  width:15%;
 }
 .time{
-  width: 70px;
+  width: 5%;
 }
 .day_box{
   /* width:250px; */
   text-align:center;
-  /* border: 1px solid; */
 }
 .mon{
+  width:12%;
   position: absolute;
-  left: 7%;
-  border: 1px solid;
+  margin-left: 0.5%;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size:17px;
 }
 .tue{
+  width:12%;
   position: absolute;
-  left: 19%;
-  border: 1px solid;
+  margin-left: 14%;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size:17px;
 }
 .wed{
+  width:12%;
   position: absolute;
-  left: 34%;
-  border: 1px solid;
+  margin-left: 28%;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size:17px;
 }
 .thur{
+  width:12%;
   position: absolute;
-  left: 50%;
-  border: 1px solid;
+  margin-left: 42%;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size:17px;
 }
 .fri{
+  width:12%;
   position: absolute;
-  left: 59%;
-  border: 1px solid;
+  margin-left: 56%;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size:17px;
 }
 </style>
 </head>
@@ -69,22 +83,25 @@ $table_num = $table_num_[0];
 <p>안녕 &#9;안녕 &nbsp; 안녕 &emsp; 안녕</p>
 
 
+<!-- #f9957f, #abcfd1, #d4e6c4, #ffcfcb, #f4c464, #abbeec, #f7d7c2, #8cc1d3
+진한코랄 조금진한파스텔청록  파스텔연두 파스텔돼지핑크 찐한노랑 어두운하늘 살색 청록인데블루끼 가득 -->
+
 <?php
+$color_arr = array('#c6dbda', '#ffc5bf', '#ecd5e3', '#e0b588', '#ED8A81', '#e6d5ba', '#99aa8c');
 for ($i=1; $i<=$table_num; $i++){
   $table_index = $i;
 ?>
-<table style="border:1px solid;" id="timetable">
-<!-- 몇 학점 추천 시간표 -->
-<thead><tr>
-<th style="border:1px solid;">시간</th>
-<th class="day" style="border:1px solid;">월</th>
-<th class="day" style="border:1px solid;">화</th>
-<th class="day" style="border:1px solid;">수</th>
-<th class="day" style="border:1px solid;">목</th>
-<th class="day" style="border:1px solid;">금</th>
-</tr></thead>
+<table style="border:1px solid; margin-left:12%; background: #f6eee8;" id="timetable">
+<tr><th style="border:1px solid;">시간</th>
+<th class="day" style="border:1px solid; background:#c6dbda;">월</th>
+<th class="day" style="border:1px solid; background:#ffc5bf;">화</th>
+<th class="day" style="border:1px solid; background:#ecd5e3;">수</th>
+<th class="day" style="border:1px solid; background:#fae39d;">목</th>
+<th class="day" style="border:1px solid; background:#99aa8c;">금</th>
+</tr>
+
 <tr>
-<td class="time" style="border:1px solid;">1교시</td>
+<td class="time" style="border:1px solid; background:#f9957f;">1교시</td>
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=1;";
 $result = mysqli_query($conn, $query);
@@ -99,8 +116,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 }
 ?>
 </tr>
-<tr><td class="time" style="border:1px solid;">2교시</td>
-
+<tr><td class="time" style="border:1px solid; background:#abcfd1;">2교시</td>
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=2;";
 $result = mysqli_query($conn, $query);
@@ -116,7 +132,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 ?>
 
 </tr>
-<tr><td class="time" style="border:1px solid;">3교시</td>
+<tr><td class="time" style="border:1px solid; background:#d4e6c4;">3교시</td>
 
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=3;";
@@ -133,7 +149,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 ?>
 
 </tr>
-<tr><td class="time" style="border:1px solid;">4교시</td>
+<tr><td class="time" style="border:1px solid; background:#ffcfcb;">4교시</td>
 
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index  and period=4;";
@@ -150,7 +166,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 ?>
 
 </tr>
-<tr><td class="time" style="border:1px solid;">5교시</td>
+<tr><td class="time" style="border:1px solid; background:#f4c464;">5교시</td>
 
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=5;";
@@ -167,7 +183,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 ?>
 
 </tr>
-<tr><td class="time" style="border:1px solid;">6교시</td>
+<tr><td class="time" style="border:1px solid; background:#abbeec;">6교시</td>
 
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=6;";
@@ -184,7 +200,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 ?>
 
 </tr>
-<tr><td class="time" style="border:1px solid;">7교시</td>
+<tr><td class="time" style="border:1px solid; background:#8cc1d3;">7교시</td>
 
 <?php 
 $query = "SELECT * FROM time_table where table_number = $table_index and period=7;";
@@ -200,7 +216,7 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 }
 ?>
 </tr>
-</table>
+</p>
 <?php }?>
 
 

@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
+<!-- 파스텔톤으로 
+파스텔블루 #c6dbda 
+파스텔코랄 #ffc5bf
+파스텔연보라 #ecd5e3
+파스텔 옐로우 #fae39d -->
+
+<!-- 2021 pantone
+desert mist  #e0b588
+burnt coral  #ED8A81
+buttercream  #e6d5ba
+willow       #99aa8c -->
+
+<p style="font-size: 30px; color:#c6dbda;">파스텔 블루</p>
+<p style="font-size: 30px; color:#ffc5bf;">파스텔 코랄</p>
+<p style="font-size: 30px; color:#ecd5e3;">파스텔 연보라</p>
+<p style="font-size: 30px; color:#fae39d;">파스텔 옐로우</p>
+
+<p style="font-size: 30px; color:#e0b588;">desert mist</p>
+<p style="font-size: 30px; color:#ED8A81;">burnt coral</p>
+<p style="font-size: 30px; color:#e6d5ba;">buttercream</p>
+<p style="font-size: 30px; color:#99aa8c;">willow </p>
+
 
 <h1>The onclick Event</h1>
 
@@ -8,7 +30,7 @@
 
 <p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
 
-<button onclick="myFunction()">Click me</button>
+<button onclick="showTable()">Click me</button>
 
 <p id="demo"></p>
 
