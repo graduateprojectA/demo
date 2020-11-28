@@ -205,12 +205,18 @@ img {vertical-align: middle;}
   <div class="text">
     과목선택
     <?php 
-        $majors_ = "SELECT major_name FROM majors WHERE recommend_time = 32";
+        // 32 이거 어떻게 해야하냐ㅠㅠㅠㅠㅠ 학년에서 다른 페이지와 받아야할 것 같음
+        $majors_ = "SELECT * FROM majors WHERE recommend_time = 32";
         $major = mysqli_query($conn, $majors_);
-        while($eachmajor = mysqli_fetch_assoc($major)){
-            echo $eachmajor['major_name'];
-        }
-    ?>
+        while($eachmajor = mysqli_fetch_array($major)){
+            $num = $eachmajor[1];
+            $divi = $eachmajor[6];
+            $numdivi = $num."".$divi;
+            ?>
+        <input type = "checkbox" name = "major_check[]" value = "<?php echo $numdivi?>">
+            <?php echo $eachmajor['major_name']; ?>
+        </input>
+        <?php } ?>
     <button>제출</button>
   </div>
 </div>
