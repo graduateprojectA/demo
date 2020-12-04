@@ -29,7 +29,7 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   text-align:center;
 }
 .mon{
-  width:12%;
+  width:10%;
   position: absolute;
   margin-left: 0.5%;
   border-right: 2px solid;
@@ -37,41 +37,45 @@ $conn = mysqli_connect('localhost', 'root', '1234', 'graduate');
   font-size:17px;
 }
 .tue{
-  width:12%;
+  width:10%;
   position: absolute;
-  margin-left: 14%;
+  margin-left: 12%;
   border-right: 2px solid;
   border-bottom: 2px solid;
   font-size:17px;
 }
 .wed{
-  width:12%;
+  width:10%;
   position: absolute;
-  margin-left: 28%;
+  margin-left: 23%;
   border-right: 2px solid;
   border-bottom: 2px solid;
   font-size:17px;
 }
 .thur{
-  width:12%;
+  width:10%;
   position: absolute;
-  margin-left: 42%;
+  margin-left: 35%;
   border-right: 2px solid;
   border-bottom: 2px solid;
   font-size:17px;
 }
 .fri{
-  width:12%;
+  width:10%;
   position: absolute;
-  margin-left: 56%;
+  margin-left: 47%;
   border-right: 2px solid;
   border-bottom: 2px solid;
   font-size:17px;
 }
+/* body{
+    background-color: #faefe8;
+} */
 </style>
 </head>
 
 <body class="default">
+<img src="images/curvelio.png" height="100px" style = "position:absolute; top:3%;left:14%;">
 <?php 
 $query = "SELECT max(table_number) FROM time_table;";
 $result = mysqli_query($conn, $query);
@@ -79,8 +83,9 @@ $table_num_ = mysqli_fetch_row($result);
 $table_num = $table_num_[0];
 ?>
 
+<br/><br/><br/><br/>
 <p>총 <?php echo $table_num?>개의 추천 시간표가 있습니다.</p>
-<p>안녕 &#9;안녕 &nbsp; 안녕 &emsp; 안녕</p>
+<!-- <p>안녕 &#9;안녕 &nbsp; 안녕 &emsp; 안녕</p> -->
 
 
 <!-- #f9957f, #abcfd1, #d4e6c4, #ffcfcb, #f4c464, #abbeec, #f7d7c2, #8cc1d3
@@ -91,7 +96,7 @@ $color_arr = array('#c6dbda', '#ffc5bf', '#ecd5e3', '#e0b588', '#ED8A81', '#e6d5
 for ($i=1; $i<=$table_num; $i++){
   $table_index = $i;
 ?>
-<table style="border:1px solid; margin-left:12%; background: #f6eee8;" id="timetable">
+<table style="border:1px solid; margin-left:18%; background: #f6eee8;" id="timetable">
 <tr><th style="border:1px solid;">시간</th>
 <th class="day" style="border:1px solid; background:#c6dbda;">월</th>
 <th class="day" style="border:1px solid; background:#ffc5bf;">화</th>
@@ -218,7 +223,5 @@ while ($table_1 = mysqli_fetch_assoc($result)){
 </tr>
 </p>
 <?php }?>
-
-
 </body>
 </html>
