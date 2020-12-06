@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -51,7 +50,7 @@ img {vertical-align: middle;}
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 50%;
+  bottom: 7%;
   width: 100%;
   text-align: center;
 }
@@ -111,110 +110,185 @@ img {vertical-align: middle;}
 </style>
 </head>
 <body>
-
 <form method="POST" action="Input_back.php">
 <div class="slideshow-container">
 <div class="mySlides fade">
   <!-- <div class="numbertext">1 / 3</div> -->
-  <img src="images/bg1.png" width="100%" height="100%">
-  <div class="text">
-        학년을 입력해주세요
-        <br/>
-        <input name = "user_grade"/>
-        <br/>
-        이번 학기에 들을 학점을 입력해주세요
-        <br/>
-        <input name = "user_credit"/>
+  <img src="images/background_image_input_1.png" width="100%" height="760px">
+  <img src="images/curvelio.png" height="100px" style = "position:absolute; top:3%;left:14%;">
+  <div class="text" style = "position: absolute; top:280px; text-align: left; left: 50%; width: 400px; margin-left:-200px;">
+        <p style = "border:solid 0px; font-size: 1.3em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">학년을 입력해주세요.</p>
+        <input name = "user_grade" style = "height: 40px; width: 400px; background-color: #faefe8; border-bottom: solid 2px; border-color: #99aa8c; border-top: 0px; boder-left:0px; border-right:0px;"/>
+        <br/><br/>
+        <p style = " border:solid 0px; font-size: 1.3em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">이번 학기에 들을 학점을 입력해주세요.</p>
+        <input name = "user_credit" style = "height: 40px; width: 400px; background-color: #faefe8; border-bottom: solid 2px; border-color: #99aa8c; border-top: 0px; boder-left:0px; border-right:0px;"/>
   </div>
 </div>
 
 <div class="mySlides fade">
   <!-- <div class="numbertext">2 / 3</div> -->
-  <img src="images/bg2.png" style="width:100%">
+  <img src="images/background_image_input_2.png" width="100%" height="760px">
+  <img src="images/curvelio.png" height="100px" style = "position:absolute; top:3%;left:14%;">
   <div class="text">
-    시간표선택
+    <div style = "position: absolute; top: -45px; left:50%; width: 300px; margin-left: -150px;font-size: 1.2em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">불가능한 시간을 체크해주세요.</div>
+    <p style = "position: absolute; top: -11px; left:640px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">월</p>
+    <p style = "position: absolute; top: -11px; left:700px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">화</p>
+    <p style = "position: absolute; top: -11px; left:762px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">수</p>
+    <p style = "position: absolute; top: -11px; left:822px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">목</p>
+    <p style = "position: absolute; top: -11px; left:882px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">금</p>
+    <p style = "position: absolute; top: 10px; left:575px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">8:00</p>
+    <p style = "position: absolute; top: 65px; left:575px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">9:30</p>
+    <p style = "position: absolute; top: 128px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">11:00</p>
+    <p style = "position: absolute; top: 190px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">12:30</p>
+    <p style = "position: absolute; top: 255px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">14:00</p>
+    <p style = "position: absolute; top: 317px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">15:30</p>
+    <p style = "position: absolute; top: 380px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">17:00</p>
+    <p style = "position: absolute; top: 440px; left:568px; font-size: 1.1em; font-family: 'Jeju Gothic', sans-serif;">18:30</p>
     <div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="11" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="21" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="31" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="41" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="51" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="11" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="21" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="31" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="41" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="51" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="12" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="22" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="32" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="42" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="52" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="12" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="22" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="32" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="42" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="52" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="13" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="23" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="33" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="43" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="53" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="13" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="23" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="33" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="43" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="53" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="14" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="24" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="34" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="44" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="54" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="14" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="24" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="34" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="44" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="54" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="15" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="25" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="35" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="45" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="55" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="15" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="25" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="35" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="45" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="55" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px; margin-bottom:-47px;">
-            <label><input type="checkbox" name = "time_out[]" value="16" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="26" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="36" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="46" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="56" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div style = "margin-bottom:-43px;">
+            <label><input type="checkbox" name = "time_out[]" value="16" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="26" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="36" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="46" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="56" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
-        <div style = "border: solid 1px;">
-            <label><input type="checkbox" name = "time_out[]" value="17" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="27" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="37" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="47" style = "width:65px;height:110px; margin-right:-5px;"></label>
-            <label><input type="checkbox" name = "time_out[]" value="57" style = "width:65px;height:110px; margin-right:-5px;"></label>
+        <div>
+            <label><input type="checkbox" name = "time_out[]" value="17" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="27" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="37" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="47" style = "width:60px;height:100px; margin-right:-7px;"></label>
+            <label><input type="checkbox" name = "time_out[]" value="57" style = "width:60px;height:100px; margin-right:-7px;"></label>
         </div>
     </div>       
   </div>
 </div>
 
+
 <div class="mySlides fade">
   <!-- <div class="numbertext">3 / 3</div> -->
-  <img src="images/bg3.png" style="width:100%">
-  <div class="text">
-    과목선택
-    <?php 
-        // 32 이거 어떻게 해야하냐ㅠㅠㅠㅠㅠ 학년에서 다른 페이지와 받아야할 것 같음
-        $majors_ = "SELECT * FROM majors WHERE recommend_time = 32";
-        $major = mysqli_query($conn, $majors_);
-        while($eachmajor = mysqli_fetch_array($major)){
-            $num = $eachmajor[1];
-            $divi = $eachmajor[6];
-            $numdivi = $num."".$divi;
-            ?>
-        <input type = "checkbox" name = "major_check[]" value = "<?php echo $numdivi?>">
-            <?php echo $eachmajor['major_name']; ?>
-        </input>
-        <?php } ?>
-    <button>제출</button>
+  <img src="images/background_image_input_3_2.png" width="100%" height="760px">
+  <img src="images/curvelio.png" height="100px" style = "position:absolute; top:3%;left:14%;">
+  <div class="text" style = "position: absolute; top:230px; text-align: left; left: 40%; width: 450px; margin-left:-200px;">
+  <div style = "position: absolute; top: -45px; left:45%; width: 300px; margin-left: -180px; margin-botton: -80px; font-size: 1.2em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">제외할 수업을 체크해주세요.</div>
+  
+        <br/>
+    <button style = "background:#faefe8; width:27vw; height:6vh; border:0; font-size: 15px;">시간표 생성하기</button>
   </div>
 </div>
 </form>
+
+<div id="소프트웨어공학최병주" style=" position:absolute; right:530px; top:170px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('소프트웨어공학최병주');" onmouseover="javascript:showLayer('소프트웨어공학최병주');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+소프트웨어공학<br/>최병주 교수님</br>학수번호: 20472<br/>분반번호: 01<br/><br/>중간고사<br/>2020/10/16(금)<br/>기말고사<br/>2020/12/04(금)
+</p>
+</div>
+</div>
+
+<div id="SW리더십세미나II김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('SW리더십세미나II김현수');" onmouseover="javascript:showLayer('SW리더십세미나II김현수');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+SW리더십세미나II<br/>김현수 교수님</br>학수번호: 38409<br/>분반번호: 01<br/><br/>중간고사<br/>일정없음<br/>기말고사<br/>일정없음
+</p>
+</div>
+</div>
+
+<div id="소프트웨어공학박지현" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('소프트웨어공학박지현');" onmouseover="javascript:showLayer('소프트웨어공학박지현');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+소프트웨어공학<br/>박지현 교수님</br>학수번호: 20472<br/>분반번호: 02<br/><br/>중간고사<br/>2020/10/16(금)<br/>기말고사<br/>2020/12/04(금)
+</p>
+</div>
+</div>
+
+<div id="컴퓨터그래픽스김영준" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('컴퓨터그래픽스김영준');" onmouseover="javascript:showLayer('컴퓨터그래픽스김영준');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+컴퓨터그래픽스<br/>김영준 교수님</br>학수번호: 20494<br/>분반번호: 01<br/><br/>중간고사<br/>2020/11/03(화)<br/>기말고사<br/>2020/12/18(금)
+</p>
+</div>
+</div>
+
+<div id="컴퓨터네트워크이미정" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('컴퓨터네트워크이미정');" onmouseover="javascript:showLayer('컴퓨터네트워크이미정');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+컴퓨터네트워크<br/>이미정 교수님</br>학수번호: 20495<br/>분반번호: 01<br/><br/>중간고사<br/>2020/10/28(수)<br/>기말고사<br/>2020/12/14(월)
+</p>
+</div>
+</div>
+
+<div id="컴퓨터네트워크이숙영" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('컴퓨터네트워크이숙영');" onmouseover="javascript:showLayer('컴퓨터네트워크이숙영');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+컴퓨터네트워크<br/>이숙영 교수님</br>학수번호: 20495<br/>분반번호: 02<br/><br/>중간고사<br/>2020/10/27(화)<br/>기말고사<br/>2020/12/15(화)
+</p>
+</div>
+</div>
+
+<div id="캡스톤디자인프로젝트A김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('캡스톤디자인프로젝트A김현수');" onmouseover="javascript:showLayer('캡스톤디자인프로젝트A김현수');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+캡스톤디자인프로젝트A<br/>김현수 교수님</br>학수번호: 36506<br/>분반번호: 01<br/><br/>중간고사<br/>일정없음<br/>기말고사<br/>일정없음
+</p>
+</div>
+</div>
+
+<div id="임베디드시스템및실험박상수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('임베디드시스템및실험박상수');" onmouseover="javascript:showLayer('임베디드시스템및실험박상수');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+임베디드시스템및실험<br/>박상수 교수님</br>학수번호: 37271<br/>분반번호: 01<br/><br/>중간고사<br/>2020/10/19(월)<br/>기말고사<br/>2020/12/14(월)
+</p>
+</div>
+</div>
+
+<div id="SW리더십세미나I김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+<div onmouseout="javascript:hideLayer('SW리더십세미나I김현수');" onmouseover="javascript:showLayer('SW리더십세미나I김현수');">
+<p style = "width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
+SW리더십세미나I<br/>김현수 교수님</br>학수번호: 38408<br/>분반번호: 01<br/><br/>중간고사<br/>일정없음<br/>기말고사<br/>일정없음
+</p>
+</div>
+</div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 </div>
-<br>
+<!-- <br> -->
 <!-- 
 <div style="text-align:center">
   <button type = "button" onclick="currentSlide(1)" class="aa">aa</button>
@@ -259,6 +333,13 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   aas[slideIndex-1].className += " active";
+}
+
+function showLayer(layerID) {
+document.all[layerID].style.visibility = "visible";
+}
+function hideLayer(layerID) {
+document.all[layerID].style.visibility = "hidden";
 }
 </script>
 
