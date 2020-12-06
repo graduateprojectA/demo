@@ -67,38 +67,6 @@ input::placeholder {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 
-<script type="text/javascript">
-// 자동검색
-$(function() {
-  var allMajors = [];
- 
-$("#mybtn").autocomplete({
-    source: allMajors,
-    select: function(event, ui) {
-        console.log(ui.item);
-    },
-    focus: function(event, ui) {
-        return false;
-        //event.preventDefault();
-    } 
-  });
-});
-
-
-(function cleanText($) {
-  var $pw = $('#ex4-id-input, #ex4-pw-input,ex4-major-input')
-  $pw.on('click focus', function() {
-    $(this).siblings('label').hide()
-  });
-  $pw.on('blur', function() {
-    $this = $(this)
-    if ($.trim($this.val()).length === 0) {
-      $this.siblings('label').show()
-    }
-  });
-})(jQuery);
-
-
-</script>
 </body>
 </html> 
+
