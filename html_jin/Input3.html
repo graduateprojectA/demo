@@ -60,7 +60,7 @@
         }
 
         /* Caption text */
-        .text {
+        .text_before{
             color: #333333;
             font-size: 15px;
             padding: 8px 12px;
@@ -70,14 +70,26 @@
             text-align: center;
         }
 
-        /* Number text (1/3 etc) */
-        /* .numbertext {
-  color: #111111;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-} */
+        .text_after{
+            color: #333333;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 7%;
+            width: 100%;
+            text-align: center;
+        }
+
+@media screen and (max-width:1000px){
+   .text_before{
+        display: none;
+    }
+}
+@media screen and (min-width:1000px){
+    .text_after{
+        display: none;
+    }
+}
 
         /* The dots/bullets/indicators */
         .dot {
@@ -157,9 +169,10 @@
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/background_image_input_3_2.png" width="100%" height="760px">
-                <img src="images/curvelio.png" height="100px" style="position:absolute; top:3%;left:14%;">
-                <div class="text"
+                <img src="../images/tag_image.png" width="215px" height="475px" style = "position: absolute; top:0px; left:64%;">
+                <img src="../images/background_image_input_3.png" width="100%" height="760px">
+                <img src="../images/curvelio.png" height="100px" style="position:absolute; top:3%;left:14%;">
+                <div class="text_before"
                     style="position: absolute; top:230px; text-align: left; left: 40%; width: 450px; margin-left:-200px;">
                     <div
                         style="position: absolute; top: -45px; left:45%; width: 300px; margin-left: -180px; margin-botton: -80px; font-size: 1.2em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">
@@ -264,12 +277,111 @@
                     </a>
                     </input>
                     <br />
-                    <input type="button" onclick="location.href='Timetable.html'"value="시간표 생성하기"  style="background:#faefe8; width:27vw; height:6vh; border:0; font-size: 15px;">
+                    <input type="button" onclick="location.href='Timetable.html'"value="시간표 생성하기"  style="background:#faefe8; width:27vw; height:6vh; border:0; font-size: 15px; position:absolute; bottom:20%;">
+                </div>
+
+                <div class="text_after"
+                    style="position: absolute; top:230px; text-align: left; left: 40%; width: 450px; margin-left:-200px;">
+                    <div
+                        style="position: absolute; top: -45px; left:45%; width: 300px; margin-left: -180px; margin-botton: -80px; font-size: 1.2em; font-weight:bolder; font-family: 'Jeju Gothic', sans-serif;">
+                        제외할 수업을 체크해주세요.</div>
+                    <input type="checkbox" name="major_check[]" value="1">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('SW리더십세미나II김현수');"
+                        onmouseover="javascript:showLayer('SW리더십세미나II김현수');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">SW리더십세미나II</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="2">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('소프트웨어공학최병주');"
+                        onmouseover="javascript:showLayer('소프트웨어공학최병주');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">소프트웨어공학</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="3">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('소프트웨어공학박지현');"
+                        onmouseover="javascript:showLayer('소프트웨어공학박지현');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">소프트웨어공학</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">2 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="4">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('소프트웨어공학박지현');"
+                        onmouseover="javascript:showLayer('소프트웨어공학박지현');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">소프트웨어공학</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">3 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="5">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('임베디드시스템및실험박상수');"
+                        onmouseover="javascript:showLayer('임베디드시스템및실험박상수');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">임베디드시스템및실험</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="6">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('캡스톤디자인프로젝트A김현수');"
+                        onmouseover="javascript:showLayer('캡스톤디자인프로젝트A김현수');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">캡스톤디자인프로젝트A</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="7">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('컴퓨터그래픽스김영준');"
+                        onmouseover="javascript:showLayer('컴퓨터그래픽스김영준');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">컴퓨터그래픽스</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="8">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('컴퓨터네트워크이미정');"
+                        onmouseover="javascript:showLayer('컴퓨터네트워크이미정');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">컴퓨터네트워크이미정</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">1 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <input type="checkbox" name="major_check[]" value="8">
+                    <a href
+                        style="text-decoration:none; font-size: 1.1em; color: hsl(0, 0%, 0%); font-family: 'Jeju Gothic', sans-serif;"
+                        onmouseout="javascript:hideLayer('컴퓨터네트워크이숙영');"
+                        onmouseover="javascript:showLayer('컴퓨터네트워크이숙영');">
+                        <p style="float:left; margin-top:-23px; position:absolute; left:50px;">컴퓨터네트워크이숙영</p>
+                        <p style="float:left; margin-top:-23px; position:absolute; left:250px;">2 분반</p>
+                        <br />
+                    </a>
+                    </input>
+                    <br />
+                    <input type="button" onclick="location.href='Timetable.html'"value="시간표 생성하기"  style="background:#faefe8; width:27vw; height:6vh; border:0; font-size: 15px; position:absolute; bottom:20%;">
                 </div>
             </div>
     </form>
 
-    <div id="소프트웨어공학최병주" style=" position:absolute; right:530px; top:170px; visibility : hidden">
+    <div id="소프트웨어공학최병주" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('소프트웨어공학최병주');" onmouseover="javascript:showLayer('소프트웨어공학최병주');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -279,7 +391,7 @@
         </div>
     </div>
 
-    <div id="SW리더십세미나II김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="SW리더십세미나II김현수" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('SW리더십세미나II김현수');" onmouseover="javascript:showLayer('SW리더십세미나II김현수');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -288,7 +400,7 @@
         </div>
     </div>
 
-    <div id="소프트웨어공학박지현" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="소프트웨어공학박지현" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('소프트웨어공학박지현');" onmouseover="javascript:showLayer('소프트웨어공학박지현');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -298,7 +410,7 @@
         </div>
     </div>
 
-    <div id="컴퓨터그래픽스김영준" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="컴퓨터그래픽스김영준" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('컴퓨터그래픽스김영준');" onmouseover="javascript:showLayer('컴퓨터그래픽스김영준');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -308,7 +420,7 @@
         </div>
     </div>
 
-    <div id="컴퓨터네트워크이미정" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="컴퓨터네트워크이미정" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('컴퓨터네트워크이미정');" onmouseover="javascript:showLayer('컴퓨터네트워크이미정');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -318,7 +430,7 @@
         </div>
     </div>
 
-    <div id="컴퓨터네트워크이숙영" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="컴퓨터네트워크이숙영" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('컴퓨터네트워크이숙영');" onmouseover="javascript:showLayer('컴퓨터네트워크이숙영');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -328,7 +440,7 @@
         </div>
     </div>
 
-    <div id="캡스톤디자인프로젝트A김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="캡스톤디자인프로젝트A김현수" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('캡스톤디자인프로젝트A김현수');" onmouseover="javascript:showLayer('캡스톤디자인프로젝트A김현수');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -337,7 +449,7 @@
         </div>
     </div>
 
-    <div id="임베디드시스템및실험박상수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="임베디드시스템및실험박상수" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('임베디드시스템및실험박상수');" onmouseover="javascript:showLayer('임베디드시스템및실험박상수');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -347,7 +459,7 @@
         </div>
     </div>
 
-    <div id="SW리더십세미나I김현수" style=" position:absolute; right:530px; top:150px; visibility : hidden">
+    <div id="SW리더십세미나I김현수" style=" position:absolute; left:65%; top:170px; visibility : hidden">
         <div onmouseout="javascript:hideLayer('SW리더십세미나I김현수');" onmouseover="javascript:showLayer('SW리더십세미나I김현수');">
             <p
                 style="width: 160px; height:250px; position: absolute; color:#FFFFFF; font-weight:bold; font-family: 'Jeju Gothic', sans-serif;">
@@ -356,8 +468,9 @@
         </div>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+    <a class="prev" onclick="location.href='Input2.html'">&#10094;</a>
 
     </div>
     <!-- <br> -->
